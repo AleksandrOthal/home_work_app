@@ -1,0 +1,20 @@
+<h1>Hello and welcome back, here are all posts for the last 24h. Today is <%= Date.today %></h1>
+<%= link_to('Добавить пост', new_post_path) %>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Body</th>
+    <th colspan="2"></th>
+  </th>
+
+  <% @posts.each do |post| %>
+    <tr>
+      <td><%= post.title %></td>
+      <td><%= post.body %></td>
+      <td><%= link_to 'Show', post_path(post) %></td>
+      <td><%= link_to 'Edit',edit_post_path(post) %></td>
+      <td><%= link_to 'Destroy', post_path(post), method: :delete, data: { confirm: 'Ты уверен?' } %></td>
+    </tr>
+  <% end %>
+</table>
