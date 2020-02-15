@@ -1,0 +1,2 @@
+class IkeController < ApplicationController
+end
